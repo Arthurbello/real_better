@@ -1,0 +1,182 @@
+var theapp = angular.module('myApp', ['ng', 'ngCookies']);
+
+theapp.run(function($rootScope, $http, $cookies) {
+    $http.defaults.headers.common['X-CSRFToken'] = $cookies.csrftoken;
+});
+
+theapp.controller("myController", function($scope, $http, $location, $timeout) {
+
+    $scope.sub = function() {
+    $timeout(function() {
+        scope.$apply(function() { $location.path("../"); });
+
+}, 3000);};
+
+    $scope.submitter = function() {
+    $scope.snow = true;
+    $scope.life= true;
+      $scope.sun = false;
+    }
+    ;
+    $scope.submitterer = function() {
+    $scope.sun = true;
+    $scope.rain = true
+    }
+    ;
+    $scope.submit = function() {
+//        console.log($scope.rome);
+        $http({
+            method: "post",
+            url: '/api/v1/rainfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.rainchoice1
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/rainfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.rainchoice2
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/rainfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.rainchoice3
+            }
+        });
+        if ($scope.rainchoice4) {
+            $http({
+            method: "post",
+            url: '/api/v1/rainfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.rainchoice4
+            }
+        });
+        }
+        if ($scope.rainchoice5) {
+            $http({
+            method: "post",
+            url: '/api/v1/rainfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.rainchoice5
+            }
+        });
+        }
+        $http({
+            method: "post",
+            url: '/api/v1/sunfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.sunchoice1
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/sunfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.sunchoice2
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/sunfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.sunchoice3
+            }
+        });
+        if ($scope.sunchoice4) {
+            $http({
+                method: "post",
+                url: '/api/v1/sunfavourite/',
+                headers: {'Content-Type': 'application/json;'},
+                data: {
+//                user: $scope.username,
+                    choice: $scope.sunchoice4
+                }
+            });
+        }
+        if ($scope.sunchoice5) {
+            $http({
+                method: "post",
+                url: '/api/v1/sunfavourite/',
+                headers: {'Content-Type': 'application/json;'},
+                data: {
+//                user: $scope.username,
+                    choice: $scope.sunchoice5
+                }
+            });
+        }
+        $http({
+            method: "post",
+            url: '/api/v1/snowfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.snowchoice1
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/snowfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.snowchoice2
+            }
+        });
+        $http({
+            method: "post",
+            url: '/api/v1/snowfavourite/',
+            headers : {'Content-Type':'application/json;'},
+            data: {
+//                user: $scope.username,
+                choice: $scope.snowchoice3
+            }
+        });
+        if ($scope.sunchoice4) {
+            $http({
+                method: "post",
+                url: '/api/v1/snowfavourite/',
+                headers: {'Content-Type': 'application/json;'},
+                data: {
+//                user: $scope.username,
+                    choice: $scope.snowchoice4
+                }
+            });
+        }
+        if ($scope.sunchoice5) {
+            $http({
+                method: "post",
+                url: '/api/v1/snowfavourite/',
+                headers: {'Content-Type': 'application/json;'},
+                data: {
+//                user: $scope.username,
+                    choice: $scope.snowchoice5
+                }
+            });
+        }
+    };
+
+});
+
+
+
+
+

@@ -1,0 +1,170 @@
+{% load staticfiles %}
+{#<html#}
+{#      style="background: url(../static/background_images/weather.gif) no-repeat center center fixed;#}
+{#    -webkit-background-size: cover;#}
+{#    -moz-background-size: cover;#}
+{#    -o-background-size: cover;">#}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{#<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>#}
+{#<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>#}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-cookies.js"></script>
+<script src="{% static 'js/index.js' %}"></script>
+{#	<script type="text/javascript">if($(window).width()>1024){document.write("<"+"script src='../static/js/jquery.preloader.js'></"+"script>");}	</script>#}
+<script>
+{#    $(document).ready(function() {#}
+{#		 jQuery(window).load(function() {#}
+{#		 $x = $(window).width();#}
+{#	if($x > 1024)#}
+{#	{#}
+{#    .preloader();    }#}
+{##}
+{#     $('.magnifier').touchTouch();#}
+{#    $('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){$(this).css('display','none')});#}
+{#  		  });#}
+{#$('#submit').on('click', function() {#}
+{#    setTimeout(function() {#}
+{#      location.href="http://127.0.0.1:8000/";#}
+{#        window.location = "http://127.0.0.1:8000/";#}
+
+	</script>
+<style>
+    body {background: url(../static/background_images/activities.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; color: white}
+</style>
+{#<div  ng-class="{'form-group has-success has-feedback': rainchoice4.length >= 3, 'form-group has-error has-feedback': myform.rainchoice4.$error.minlength#}
+<p style="color: #000000" id="submi">caca</p>
+{#{{ username }}#}
+{#   div has class="form-group has-success has-feedback" for good and span class="glyphicon glyphicon-ok form-control-feedback" for checkmark#}
+{#   div class="form-group has-warning has-feedback" for error and span class="glyphicon glyphicon-warning-sign form-control-feedback"#}
+{% verbatim %}
+<br>
+<div ng-app="myApp">
+<div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+
+        <form method="post" action="" ng-submit="submit();" ng-controller="myController" name="myform">
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+    <div ng-hide="rain" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(65, 105, 225, 0.95); padding-top: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; margin-left: 37.5%">
+            <div style="text-align: center">
+                      <label class="control-label" for="inputSuccess2">Activities for rainy weather</label><br>
+                        <img style="width: 60px" src="../static/background_images/rain.png">
+                      <input name="rainchoice1" ng-model="rainchoice1" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+    <div ng-show="sun"  class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(242, 166, 24, 0.95); padding-top: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; margin-left: 37.5%">
+                    <div style="text-align: center">
+                      <label class="control-label" for="inputSuccess2">Activities for sunny weather</label><br>
+                                                <img style="width: 60px" src="../static/background_images/sun.png">
+                      <input name="sunchoice1" ng-model="sunchoice1" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+    <div ng-show="snow" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(173, 216, 230,0.95); padding-top: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; margin-left: 37.5%">
+                    <div style="text-align: center">
+                      <label class="control-label" for="inputSuccess2">Activities for snowy weather</label><br>
+                                                                        <img style="width: 60px" src="../static/background_images/snow.png">
+                      <input name="snowchoice1" ng-model="snowchoice1" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+
+</div>
+<div class="row" style="margin-left: 10px; margin-right: 10px">
+    <div ng-hide="rain" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(65, 105, 225, 0.95); margin-left: 37.5%">
+            <div>
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="rainchoice2" ng-model="rainchoice2" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+    <div ng-show="sun" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(242, 166, 24, 0.95); margin-left: 37.5%">
+            <div>
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="sunchoice2" ng-model="sunchoice2" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+
+    <div ng-show="snow" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(173, 216, 230,0.95); margin-left: 37.5%">
+                    <div>
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="snowchoice2" ng-model="snowchoice2" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+</div>
+<div class="row" style="margin-left: 10px; margin-right: 10px">
+    <div ng-hide="rain" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(65, 105, 225, 0.95); margin-left: 37.5%">
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="rainchoice3" ng-model="rainchoice3" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+    <div ng-show="sun" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(242, 166, 24, 0.95); margin-left: 37.5%">
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="sunchoice3" ng-model="sunchoice3" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+    <div ng-show="snow" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(173, 216, 230,0.95); margin-left: 37.5%">
+                    <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input name="snowchoice3" ng-model="snowchoice3" type="text" class="form-control" id="inputSuccess2" required="required">
+                    </div>
+    </div>
+</div>
+<div class="row" style="margin-left: 10px; margin-right: 10px">
+    <div ng-hide="rain" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(65, 105, 225, 0.95); margin-left: 37.5%">
+
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="rainchoice4" ng-model="rainchoice4" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+    </div>
+    <div ng-show="sun" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(242, 166, 24, 0.95); margin-left: 37.5%">
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="sunchoice4" ng-model="sunchoice4" ng-minlength="3" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+    </div>
+    <div ng-show="snow" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(173, 216, 230,0.95); margin-left: 37.5%">
+                    <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="snowchoice4" ng-model="snowchoice4" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+    </div>
+
+
+</div>
+<div class="row" style="margin-left: 10px; margin-right: 10px">
+
+    <div ng-hide="rain" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(65, 105, 225, 0.95); padding-bottom: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-left: 37.5%">
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="rainchoice5" ng-model="rainchoice5" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+        <div style="text-align: center"><button style="color:rgb(65, 105, 225) " ng-click="submitterer()">Submit</button></div>
+    </div>
+
+    <div ng-show="sun" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(242, 166, 24, 0.95); padding-bottom: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-left: 37.5%">
+            <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="sunchoice5" ng-model="sunchoice5" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+        <div style="text-align: center"><button style="color:rgb(242, 166, 24) " ng-click="submitter()">Submit this</button></div>
+    </div>
+    <div ng-show="snow" class="col-sm-3 col-md-3 col-lg-3" style="background-color: rgba(173, 216, 230,0.95); padding-bottom: 50px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-left: 37.5%">
+                    <div >
+                      <label class="control-label" for="inputSuccess2">Input with success</label>
+                      <input placeholder="not required" name="snowchoice5" ng-model="snowchoice5" type="text" class="form-control" id="inputSuccess2">
+                    </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+           <div ng-show="life" ng-click="sub()" style="text-align: center; color: gold"><input style="width: 300px" type="submit" id="submit" value="Submit" ></div>
+        </form>
+</div>
+{% endverbatim %}
+{#</html>#}
