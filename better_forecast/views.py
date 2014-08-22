@@ -106,7 +106,9 @@ def favourites(request):
 
 
 def home(request):
-    if request.user.is_authenticated() == True:
+    if request.user.is_authenticated():
+        # Most of this view can be abstracted out into functions so it's more DRY
+        # You could have a function called get_random_rain_favourite() which does the randomint and makes the query
         if request.user.choice == "YOURCHOICE":
             if len(RainFavourite.objects.filter(user=request.user)) < 4 or len(SunFavourite.objects.filter(user=request.user)) < 4 or len(SnowFavourite.objects.filter(user=request.user)) < 4:
                 number0 = randint(0,2)
