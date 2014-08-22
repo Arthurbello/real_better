@@ -5,6 +5,7 @@ from django.forms.formsets import formset_factory
 
 class WeatherUserCreationForm(UserCreationForm):
         email = forms.EmailField(required=True)
+        # don't need to recreate all of these fields since it's a model form
         PART_CHOICES = (
         ('RANDOM', 'Random'),
         ('YOURCHOICE', 'Yourchoice'),)
@@ -82,6 +83,7 @@ class WeatherUserCreationForm(UserCreationForm):
             )
 
 
+# Could make these model forms instead
 class RainFavouriteForm(forms.Form):
     choice1 = forms.CharField(max_length=160)
 
