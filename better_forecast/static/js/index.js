@@ -25,6 +25,8 @@ theapp.controller("myController", function($scope, $http, $location, $timeout, $
     ;
     $scope.submit = function() {
 //        console.log($scope.rome);
+        // This is not very DRY, these all look exactly the same, minus the choice you're using
+        // Could turn this into a function which loops through and makes all of these POSTs
         $http({
             method: "post",
             url: '/api/v1/rainfavourite/',
