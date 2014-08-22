@@ -7,6 +7,7 @@ class BetterUser(AbstractUser):
         ('RANDOM', 'Random'),
         ('YOURCHOICE', 'Yourchoice'),
     )
+    # There's django libraries you can use instead of making this yourself
     STATE = (
         ('AL', 'AL'),
         ('AK', 'AK'),
@@ -71,6 +72,10 @@ class BetterUser(AbstractUser):
         return u"{}".format(self.username)
 
 
+# Need to change these related_names, they won't be straightfoward
+# for example, this one should be something like "rain_favourites"
+
+# All of these models could inherit from an abstract base model since they share the same fields
 class RainFavourite(models.Model):
     user = models.ForeignKey(BetterUser, related_name='use')
     choice = models.CharField(max_length=160)
