@@ -27,7 +27,7 @@ $(document).ready(function() {
 //$('#thermometer').css('bottom', (($('#thermometer').height() - $('#thermometer').height()) / 2) + 'px');
 //$('#thermometer').css('left', ($(this).width() - $('#wrapper').width()) / -2);
     $.ajax({
-        url: 'http://api.wunderground.com/api/bf018b5365de19f5/forecast10day/q/'+ $('#p').data('state') +'/'+ $('#p').data('city') +'.json',
+        url: 'http://api.wunderground.com/api/bf018b5365de19f5/forecast10day/q/GA/College_Park.json',
         type: 'GET',
         dataType: 'jsonp',
         success: function(response) {
@@ -129,6 +129,9 @@ $('#popoverOption').popover({ trigger: "hover" });
                 }
                 else if (response.forecast.simpleforecast.forecastday[i].icon_url == 'http://icons.wxug.com/i/c/k/mostlycloudy.gif') {
                     image = '../static/background_images/mostlycloudy.png'
+                }
+                else if (response.forecast.simpleforecast.forecastday[i].icon_url == 'http://icons.wxug.com/i/c/k/rain.gif') {
+                    image = '../static/background_images/rain.png'
                 }
                 else if (response.forecast.simpleforecast.forecastday[i].icon_url == 'http://icons.wxug.com/i/c/k/partlycloudy.gif') {
                     image = '../static/background_images/partycloudy.png'

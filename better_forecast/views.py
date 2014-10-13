@@ -117,6 +117,15 @@ def home(request):
                 number5 = randint(0,2)
                 number6 = randint(0,2)
                 number7 = randint(0,2)
+            elif len(RainFavourite.objects.filter(user=request.user)) == 4 or len(SunFavourite.objects.filter(user=request.user)) == 4 or len(SnowFavourite.objects.filter(user=request.user)) == 4:
+                number0 = randint(0,3)
+                number1 = randint(0,3)
+                number2 = randint(0,3)
+                number3 = randint(0,3)
+                number4 = randint(0,3)
+                number5 = randint(0,3)
+                number6 = randint(0,3)
+                number7 = randint(0,3)
             else:
                 number0 = randint(0,4)
                 number1 = randint(0,4)

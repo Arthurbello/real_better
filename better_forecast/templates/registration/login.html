@@ -32,15 +32,16 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+<div style="text-align: center; color: white"><h1>Better Forecast</h1></div>
+
 <div style="background: linear-gradient(0deg, rgba(205, 205, 205, 0.03), rgba(255, 255, 255, 0.9), rgba(205, 205, 205, 0.03) ); border-radius: 15px;text-align: center; width: 40%; height: 200px; margin-left: auto; margin-right: auto; padding-top: 60px; color: steelblue">
+
     <form method="post" action=".">
         {% csrf_token %}
         Username<br>
         {{ form.username }}<br>
         Password<br>
-        {{ form.password}}<br>
+        {{ form.password }}<br>
 
         <input type="submit" value="Log in">
     </form>

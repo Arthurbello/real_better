@@ -10,7 +10,7 @@ theapp.controller("myController", function($scope, $http, $location, $timeout, $
     $timeout(function() {
         $window.location.href = 'http://127.0.0.1:8000/';
 
-}, 3000);};
+}, 2200);};
 
     $scope.submitter = function() {
     $scope.snow = true;

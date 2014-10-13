@@ -5629,13 +5629,13 @@ button.close {
   font-size: 14px;
   font-weight: normal;
   line-height: 18px;
-  background-color: #f7f7f7;
+  background-color: goldenrod;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
 }
 .popover-content {
   padding: 9px 14px;
-      background-color: #f7f7f7;
+      background-color: goldenrod;
 }
 .popover > .arrow,
 .popover > .arrow:after {
@@ -5665,7 +5665,7 @@ button.close {
   bottom: 1px;
   margin-left: -10px;
   content: " ";
-  border-top-color: #fff;
+  border-top-color: goldenrod;
   border-bottom-width: 0;
 }
 .popover.right > .arrow {
@@ -5680,7 +5680,7 @@ button.close {
   bottom: -10px;
   left: 1px;
   content: " ";
-  border-right-color: #fff;
+  border-right-color: goldenrod;
   border-left-width: 0;
 }
 .popover.bottom > .arrow {
@@ -5696,7 +5696,7 @@ button.close {
   margin-left: -10px;
   content: " ";
   border-top-width: 0;
-  border-bottom-color: #fff;
+  border-bottom-color: goldenrod;
 }
 .popover.left > .arrow {
   top: 50%;
@@ -5711,7 +5711,7 @@ button.close {
   bottom: -10px;
   content: " ";
   border-right-width: 0;
-  border-left-color: #fff;
+  border-left-color: goldenrod;
 }
 .carousel {
   position: relative;
@@ -6201,4 +6201,3 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
